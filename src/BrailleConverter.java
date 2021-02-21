@@ -8,6 +8,7 @@ public final class BrailleConverter {
 
     private BrailleConverter() {}
 
+    // Converts a 2 by 8 int array of 1s and 0s to a braille unicode char
     private static char arrayBlockToBraille(int[][] block) {
         // Gets the permutation value (last value in the unicode name) from a 2x8 array of int
         int unicodeName = arrayToBrailleUnicodeName(block);
@@ -18,6 +19,14 @@ public final class BrailleConverter {
         return Character.toChars(unicodeValue)[0];
     }
 
+    /**
+     *
+     * @param pixelArr  An 2D array of pixel values in integers
+     * @param invert    Whether or not to invert the binary image
+     * @param fillGaps  Whether or not to replace empty braille characters with a single braille value, used for equal
+     *                  width in case that the target application does not support it
+     * @return          A 2D pixel array of braille unicode
+     */
     public static String generateBraille(int[][] pixelArr, boolean invert, boolean fillGaps) {
 
         int xScale = 2;
