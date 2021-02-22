@@ -1,10 +1,6 @@
 import java.util.HashMap;
 
 public final class BrailleConverter {
-    // Modes
-    public static final int DISCORD_DESKTOP_LINE = 90;
-    public static final int DISCORD_MOBILE_LINE = 32;
-    public static final int DISCORD_MAX = 2000;
 
     private BrailleConverter() {}
 
